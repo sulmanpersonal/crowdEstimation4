@@ -1,0 +1,15 @@
+%%
+clear
+close all
+clc
+
+%%
+load('CONST_DATA.mat');
+dataPath = '/Users/Sulman/Documents/Repos/data from crowd sim simulations/50-100/';
+dataFiles = dir('/Users/Sulman/Documents/Repos/data from crowd sim simulations/50-100/*.dat');
+[TimeStamp,IDx,Xi,Yi] = importFileData(strcat(dataPath,dataFiles(1).name));
+Zones = zoneAllXY(Xi,Yi,ZONE);
+
+zeroZones = find(
+
+clearvars dataPath dataFiles POS_ZONE QUANTIZATION ZONE
